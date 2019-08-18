@@ -118,6 +118,7 @@ main.home {
       background: #CF8A0B;
       text-align: center;
       border-radius: 0.5rem;
+      text-decoration: none;
 
       & .title {
         margin-top: 2rem;
@@ -132,7 +133,7 @@ main.home {
         & img {
           margin-bottom: 2rem;
           max-width: 100%;
-          max-height: 200px;
+          height: 200px;
         }
       }
     }
