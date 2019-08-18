@@ -44,10 +44,10 @@ main.home {
     & h1 {
       font-family: 'Lexend Deca', Helvetica, Arial, sans-serif;
       letter-spacing: initial;
-      font-size: 8rem;
+      font-size: 10rem;
     }
 
-    @media (max-width: 550px) {
+    @media (max-width: 750px) {
       & h1 {
         font-size: 5rem;
       }
@@ -65,7 +65,6 @@ main.home {
   }
 
   & h1 {
-    font-weight: 800;
     margin-bottom: 0;
   }
 

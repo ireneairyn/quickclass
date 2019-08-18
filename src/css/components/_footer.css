@@ -4,6 +4,10 @@
   padding-top: 3em;
   color: #fffffd;
 
+  & h5 {
+    font-family: 'Lexend Deca', Helvetica, Arial, sans-serif;
+  }
+
   & ul {
     display: inline-block;
     vertical-align: top;
