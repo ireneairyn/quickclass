@@ -1,0 +1,133 @@
+{{ partial "header" . }}
+
+<main class="home">
+
+  <div class="hero">
+    <div class="container">
+      <h1>Quick Class</h1>
+      <h5>Watch. Learn. Speak.</h5>
+      {{ partial "nav" . }}
+    </div>
+  </div>
+
+  <div class="recent-activity">
+    <div class="container">
+      <div class="posts">
+        <div class="section-title">Recent Posts</div>
+        <ul class="posts-list">
+          {{ range first 1 (where .Data.Pages "Section" "blog") }}
+          {{ partial "post-summary.html" . }}
+          {{ end }}
+        </ul>
+
+        <ul class="posts-list">
+          {{ range (first 3 (after 1 (where .Data.Pages "Section" "blog") )) }}
+          {{ .Render "li" }}
+          {{ end }}
+        </ul>
+        <a class="more" href="/blog">All posts &raquo;</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="projects" class="projects">
+    <div class="container">
+      <div class="section-title">Projects</div>
+
+      <p>Here are some things that I've built over the years.</p>
+
+      <div class="projects-list">
+
+        {{ range sort $.Site.Data.projects "priority" "asc" }}
+          <div id="{{ .id }}" class="project list-item">
+            <h5 class="title"><a href="https://{{ .link }}" target="_blank">{{ .title }}</a></h5>
+
+            <div class="img-container">
+              <a href="https://{{ .link }}" target="_blank">
+                <img src="/images/projects/{{ .screenshot }}.png" />
+              </a>
+            </div>
+
+            <div class=" meta-container">
+              <p class="summary">{{ .summary | markdownify }}</p>
+              <p class="desc">{{ .description | markdownify }}</p>
+            </div>
+
+            <ul class="links-list">
+              {{ range .links }}
+              <li>
+                <a href="https://{{ . }}" target="_blank">{{ . }}</a>
+              </li>
+              {{ end }}
+            </ul>
+
+            <span data-project="{{ .id }}" class="show more click-to-expand">
+              More +
+            </span>
+
+            <span data-project="{{ .id }}" class="show less click-to-close">
+              Close -
+            </span>
+          </div>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="work" class="projects">
+    <div class="container">
+      <div class="section-title">Work</div>
+
+      <p>I'm a full-stack developer with 8 years professional experience working on high-availability, high-traffic web applications and APIs. I have particular expertise in:</p>
+
+      <ul>
+        <li>Python, Node</li>
+        <li>SQL / NoSQL, caching, search, queueing</li>
+        <li>Unit testing, continuous deployment</li>
+        <li>ReactJS, AngularJS</li>
+        <li>Modern frontend tooling (ES6, Webpack, SASS)</li>
+      </ul>
+
+      <div class="projects-list">
+        {{ range sort $.Site.Data.work "priority" "asc" }}
+          <div id="{{ .id }}" class="project list-item">
+            <h5 class="title"><a href="{{ .link }}" target="_blank">{{ .title }}</a></h5>
+            <p>{{ .timeframe }} | {{ .jobtitle }}</p>
+
+            <div class="img-container">
+              <a href="{{ .link }}" target="_blank">
+                <img src="/images/work/{{ .screenshot }}.png" />
+              </a>
+            </div>
+
+            <div class=" meta-container">
+              <p class="summary">{{ .summary | markdownify }}</p>
+              <p class="desc">{{ .description | markdownify }}</p>
+            </div>
+
+            <ul class="links-list">
+              {{ range .links }}
+              <li>
+                <a href="{{ . }}" target="_blank">{{ . }}</a>
+              </li>
+              {{ end }}
+            </ul>
+
+            <span data-project="{{ .id }}" class="show more click-to-expand">
+              More +
+            </span>
+
+            <span data-project="{{ .id }}" class="show less click-to-close">
+              Close -
+            </span>
+          </div>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+{{ partial "footer" . }}
