@@ -1,8 +1,7 @@
 baseurl = "/"
 languageCode = "en-us"
 languageLang = "en"
-title = "Tom J. Watson"
-disqusShortname = "tomjwatson"
+title = "Quick Class"
 
 # RSS, categories and tags disabled for an easy start
 # See configuration options for more details:

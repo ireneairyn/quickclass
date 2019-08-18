@@ -10,6 +10,7 @@ main.home {
     color: #fffffd;
     padding-top: 6rem;
     padding-bottom: 2rem;
+    position: relative;
 
     & .container {
       height: 100%;
@@ -17,6 +18,13 @@ main.home {
       flex-direction: column;
       justify-content: center;
       text-align: center;
+      padding: 0;
+      margin-top: -5rem;
+      background-image: url('/images/logo.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 50%;
     }
 
     & a {
@@ -34,9 +42,15 @@ main.home {
     }
 
     & h1 {
-      font-family: 'Raleway';
+      font-family: 'Lexend Deca', Helvetica, Arial, sans-serif;
       letter-spacing: initial;
       font-size: 8rem;
+    }
+
+    @media (max-width: 550px) {
+      & h1 {
+        font-size: 5rem;
+      }
     }
 
     & h5 {
@@ -57,15 +71,17 @@ main.home {
 
   & .section-title {
     display: inline-block;
-    margin-bottom: 2rem;
-    padding: 0.3rem 0.8rem;
-    text-transform: uppercase;
     letter-spacing: .75px;
-    background: #232323;
-    color: #fffffd;
+    font-size: 5rem;
+    margin-bottom: 5rem;
+    text-align: center;
+    color: #028C91;
+    width: 100%;
   }
 
   & .navbar {
+    position: absolute;
+    bottom: -5rem;
     & a{
       color: #fffffd;
     }
@@ -79,106 +95,52 @@ main.home {
     }
   }
 
-  & .projects {
+  & #learn {
     padding-top: 4rem;
 
-    & .projects-list {
+    & .learn-list {
       display: flex;
-      flex-wrap: wrap;
       justify-content: space-between;
     }
 
-    @media (max-width: 1000px) {
-      & div.project {
-        flex-basis: 100%;
+    @media (max-width: 550px) {
+      & .learn-list {
+        flex-wrap: wrap;
       }
     }
 
-    & .project {
+    & .learn {
       display: inline-block;
+      width: 33%;
       vertical-align: top;
-      margin-bottom: 2rem;
-      padding: 2rem;
-      padding-bottom: 4rem;
-      border: 1px solid #232323;
-      flex-basis: 48%;
-      position: relative;
-      height: fit-content;
+      margin: 2rem;
+      padding: 3rem;
+      background: #CF8A0B;
+      text-align: center;
+      border-radius: 0.5rem;
 
       & .title {
-        text-transform: initial;
-      }
-
-      & ul {
-        margin-bottom: 2rem;
+        margin-top: 2rem;
+        margin-bottom: 0;
+        font-size: 3rem;
+        color: #FFFFFF;
       }
 
       & .img-container {
         text-align: center;
 
         & img {
-          border: 1px solid #ccc;
           margin-bottom: 2rem;
           max-width: 100%;
           max-height: 200px;
         }
       }
-
-      & .show {
-        display: inline-block;
-        position: absolute;
-        bottom: 2rem;
-        left: 2rem;
-        padding: 0.3rem 0.8rem;
-        background: #232323;
-        color: #fffffd;
-      }
-
-      & .less {
-        display: none;
-      }
-
-      & .desc {
-        display: none;
-      }
-
-      & .links-list {
-        display: none;
-      }
-
-      &.active {
-        & img {
-          max-height: 300px;
-        }
-
-        & .more {
-          display: none;
-        }
-
-        & .less {
-          display: inline-block;
-        }
-
-        & .desc {
-          display: inline-block;
-        }
-
-        & .links-list {
-          display: inline-block;
-        }
-      }
-
-      & .links-list {
-        & li {
-          word-break: break-all;
-        }
-      }
-
     }
 
-    & h5 {
-      margin-bottom: 2rem;
-      text-transform: uppercase;
+    @media (max-width: 550px) {
+      & .learn {
+        width: 100%;
+      }
     }
   }
 
