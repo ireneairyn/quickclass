@@ -1,8 +1,6 @@
-# tomjwatson.com
+# thequickclass.com
 
-This repo contains the code for building [tomjwatson.com](https://tomjwatson.com).
-
-It is based off of the [netlify/victor-hugo](https://github.com/netlify/victor-hugo) Hugo boilerplate.
+This repo contains the code for building [thequickclass.com](https://thequickclass.com).
 
 ## Usage
 
